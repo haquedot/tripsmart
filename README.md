@@ -55,7 +55,7 @@
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/username/tripsmart.git
+git clone https://github.com/haquedot/tripsmart.git
 cd tripsmart
 ```
 
