@@ -88,8 +88,6 @@ export function PopularDestination() {
 
                                             <p className="text-sm text-gray-600">{destination.subtitle}</p>
 
-                                            {/* ratings using react-icons */}
-
                                             <div className="flex items-center text-yellow-500 ">
                                                 <p className="text-orange-500 font-bold gap-1 flex items-center">
                                                     {destination.rating}
