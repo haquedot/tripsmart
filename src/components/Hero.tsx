@@ -11,9 +11,9 @@ export default function Hero() {
                     <div className="grid grid-cols-1 md:grid-cols-2">
                         <div className="flex items-center text-center md:text-start">
                             <div className="space-y-12">
-                                <span className="flex items-center gap-3 w-max shadow-sm font-bold border bg-white text-pink-500 text-sm px-4 py-2 rounded-full">
+                                <p className="mx-auto md:mx-0 flex items-center gap-3 w-max shadow-sm font-bold border bg-white text-pink-500 text-sm px-4 py-2 rounded-full">
                                     Explore the world! <FaShoppingBag />
-                                </span>
+                                </p>
                                 <h1 className="text-4xl md:text-7xl font-bold">
                                     Plan Your
                                     <span className="text-pink-500 mx-2">Smart Trip</span>

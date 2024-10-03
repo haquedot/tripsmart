@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from './ui/button';
+import Logo from './Logo';
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,7 @@ const Navbar: React.FC = () => {
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                 <Link href="/" className="flex items-center">
                     <span className="self-center text-xl font-semibold whitespace-nowrap">
-                        Trip
+                        <Logo />
                     </span>
                 </Link>
                 <div className="flex gap-2 items-center lg:order-2">
