@@ -4,11 +4,15 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from './ui/button';
 import Logo from './Logo';
+import { useRouter } from 'next/navigation';
+import { IoMdClose } from 'react-icons/io';
+import { CiMenuFries } from 'react-icons/ci';
+import { RiMenu3Fill } from 'react-icons/ri';
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [hasScrolled, setHasScrolled] = useState(false);
-
+    const router = useRouter();
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 0) {
@@ -36,29 +40,18 @@ const Navbar: React.FC = () => {
                     </span>
                 </Link>
                 <div className="flex gap-2 items-center lg:order-2">
-                    <Button variant={'outline'} >Login</Button>
-                    <Button>Sign up</Button>
+                    <Button variant={'outline'} onClick={() => router.push('/login')}>Login</Button>
+                    <Button onClick={() => router.push('/signup')}>
+                        Sign up
+                    </Button>
                 </div>
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                    className="inline-flex items-center p-2 ml-1 text-sm text-black lg:hidden"
                     aria-controls="mobile-menu"
                     aria-expanded={isOpen}
                 >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4 6h16M4 12h16M4 18h16"
-                        />
-                    </svg>
+                    <RiMenu3Fill className='font-bold'/>
                 </button>
 
                 {/* Sidebar Menu for Mobile */}
@@ -66,25 +59,17 @@ const Navbar: React.FC = () => {
                     className={`fixed top-0 left-0 h-full w-64 bg-white shadow-md transform ${isOpen ? 'translate-x-0' : '-translate-x-full'
                         } transition-transform duration-300 ease-in-out lg:hidden`}
                 >
-                    <div className="flex justify-end p-4">
+                    <div className="flex items-center justify-between p-4">
+                        <Link href="/" className="flex items-center">
+                            <span className="self-center text-md font-semibold whitespace-nowrap">
+                                TripSmart
+                            </span>
+                        </Link>
                         <button
                             onClick={() => setIsOpen(false)}
                             className="text-gray-600 hover:text-gray-900 focus:outline-none"
                         >
-                            <svg
-                                className="w-6 h-6"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M6 18L18 6M6 6l12 12"
-                                />
-                            </svg>
+                            <IoMdClose />
                         </button>
                     </div>
                     <ul className="flex flex-col mt-4 font-medium">
