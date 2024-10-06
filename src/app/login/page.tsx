@@ -3,8 +3,6 @@
 
 import { signIn } from 'next-auth/react';
 import { Button } from '@/components/ui/button';
-import { FaGoogle } from 'react-icons/fa';
-import { FaFacebook } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 
 export default function Login() {

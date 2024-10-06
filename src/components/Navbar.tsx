@@ -6,7 +6,6 @@ import { Button } from './ui/button';
 import Logo from './Logo';
 import { useRouter } from 'next/navigation';
 import { IoMdClose } from 'react-icons/io';
-import { CiMenuFries } from 'react-icons/ci';
 import { RiMenu3Fill } from 'react-icons/ri';
 
 const Navbar: React.FC = () => {

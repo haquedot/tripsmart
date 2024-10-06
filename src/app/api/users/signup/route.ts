@@ -9,7 +9,7 @@ connect();
 export async function POST(request: NextRequest) {
     try {
         const reqBody = await request.json()
-        const { email, password } = reqBody;
+        const { name, email, password } = reqBody;
 
         //validation
 
@@ -25,6 +25,7 @@ export async function POST(request: NextRequest) {
         const hashedPassword = await bcryptjs.hash(password, salt);
 
         const newUser = new User({
+            name,
             email,
             password: hashedPassword,
         });

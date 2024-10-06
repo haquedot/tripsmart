@@ -3,7 +3,7 @@
 import React from 'react';
 import Logo from './Logo';
 import Link from 'next/link';
-import { FaFacebook, FaInstagram, FaLinkedin, FaMapMarkedAlt, FaPhoneSquareAlt, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaMapMarkedAlt, FaTwitter } from 'react-icons/fa';
 import { FaArrowRightLong, FaPhoneVolume } from 'react-icons/fa6';
 import { IoIosMail } from 'react-icons/io';
 
