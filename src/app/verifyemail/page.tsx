@@ -6,11 +6,11 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-export default function Signup() {
+export default function VerifyEmail() {
     const [token, setToken] = useState('');
     const [verified, setVerified] = useState(false);
     const [error, setError] = useState(false);
-    const router = useRouter();
+    // const router = useRouter();
 
     const verifyUserEmail = async () => {
         try {
@@ -23,6 +23,7 @@ export default function Signup() {
         }
 
         useEffect(() => {
+            setError(false);
             const urlToken = window.location.search.split("=")[1]
             setToken(urlToken || "");
 
@@ -32,6 +33,7 @@ export default function Signup() {
         }, []);
 
         useEffect(() => {
+            setError(false);
             if (token.length > 0) {
                 verifyUserEmail();
             }
