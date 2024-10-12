@@ -1,19 +1,15 @@
+// /pages/_app.tsx
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google"; // Importing Poppins from Google Fonts
+import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import WrapLayout from "./WrapLayout";
+// import { Analytics } from '@vercel/analytics/react';
 
-// Load the Poppins font with customizable weights
-const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tripsmart",
-  description: "A smart tourism application",
+  title: "Trip smart",
+  description: "Plan your next trip with ease",
 };
 
 export default function RootLayout({
@@ -23,10 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={inter.className}>
+        <WrapLayout>{children}</WrapLayout> {/* Wrap children with WrapLayout */}
+        {/* <Analytics /> Include Vercel analytics */}
       </body>
     </html>
   );
