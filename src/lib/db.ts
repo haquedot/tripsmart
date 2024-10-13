@@ -16,8 +16,8 @@ interface MongooseCache {
   promise: Promise<typeof mongoose> | null;
 }
 
-// eslint-disable-next-line no-var
-var cached: MongooseCache = global.mongoose || { conn: null, promise: null };
+// Use `let` instead of `var` to comply with the linting rule
+let cached: MongooseCache = global.mongoose || { conn: null, promise: null };
 
 if (!cached) {
   cached = global.mongoose = { conn: null, promise: null };
