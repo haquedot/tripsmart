@@ -91,7 +91,7 @@ export default function LoginPage() {
                 </Button>
 
                 <p className="text-center">
-                    Don't have an account?{' '}
+                    Don&apos;t have an account?{' '}
                     <span onClick={() => router.push('/signup')} className="text-blue-500 cursor-pointer">
                         Sign Up
                     </span>

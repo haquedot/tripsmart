@@ -15,14 +15,14 @@ export async function POST(req: Request) {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     // Create a new user and save in the database
-    
-    const user = await User.create({
+
+    const user = new User({
       name,
       email,
       password: hashedPassword,
     });
 
-    
+    await user.save();
 
     // Configure the transporter for nodemailer
     const transporter = nodemailer.createTransport({

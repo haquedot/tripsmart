@@ -6,16 +6,21 @@ if (!MONGO_URI) {
   throw new Error('Please define the MONGO_URI environment variable');
 }
 
+// Extend the NodeJS Global interface to include mongoose cache
+declare global {
+  var mongoose: MongooseCache | undefined;
+}
+
 interface MongooseCache {
   conn: typeof mongoose | null;
   promise: Promise<typeof mongoose> | null;
 }
 
-// Explicitly asserting the type of globalThis.mongoose
-let cached: MongooseCache = (globalThis as any).mongoose || { conn: null, promise: null };
+// Use global.mongoose to store the cache
+let cached: MongooseCache = global.mongoose || { conn: null, promise: null };
 
 if (!cached) {
-  cached = (globalThis as any).mongoose = { conn: null, promise: null };
+  cached = global.mongoose = { conn: null, promise: null };
 }
 
 async function connectDB() {
@@ -28,6 +33,7 @@ async function connectDB() {
       return mongoose;
     });
   }
+
   cached.conn = await cached.promise;
   return cached.conn;
 }

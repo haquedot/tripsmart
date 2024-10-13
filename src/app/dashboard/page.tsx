@@ -2,12 +2,10 @@
 
 'use client';
 
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { FaBell, FaSearch, FaHome, FaMap, FaUser, FaCog, FaSignOutAlt, FaBox, FaUserCircle } from 'react-icons/fa';
+import { FaBox } from 'react-icons/fa';
 
-import { MdContactSupport, MdDashboard, MdPayments } from "react-icons/md";
+import {  MdDashboard } from "react-icons/md";
 import { IoIosNotifications, IoMdLogOut, IoMdSettings } from "react-icons/io";
 import { useState } from 'react';
 import Dashboard from './Dashboard';
@@ -21,7 +19,7 @@ type View =
   "settings";
 
 
-const home = () => {
+const UserDashboard = () => {
   const [view, setView] = useState<View>("dashboard");
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -224,4 +222,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default UserDashboard;
