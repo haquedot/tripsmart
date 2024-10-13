@@ -16,8 +16,8 @@ interface MongooseCache {
   promise: Promise<typeof mongoose> | null;
 }
 
-// Use global.mongoose to store the cache
-let cached: MongooseCache = global.mongoose || { conn: null, promise: null };
+// eslint-disable-next-line no-var
+var cached: MongooseCache = global.mongoose || { conn: null, promise: null };
 
 if (!cached) {
   cached = global.mongoose = { conn: null, promise: null };

@@ -20,7 +20,7 @@ type View =
 
 
 const UserDashboard = () => {
-  const [view, setView] = useState<View>("dashboard");
+  const [view] = useState<View>("dashboard");
   const router = useRouter();
   const [open, setOpen] = useState(false);
 
