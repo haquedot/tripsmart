@@ -6,36 +6,25 @@ if (!MONGO_URI) {
   throw new Error('Please define the MONGO_URI environment variable');
 }
 
-// Extend the NodeJS Global interface to include mongoose cache
-declare global {
-  var mongoose: MongooseCache | undefined;
-}
-
-interface MongooseCache {
-  conn: typeof mongoose | null;
-  promise: Promise<typeof mongoose> | null;
-}
-
-// Use `let` instead of `var` to comply with the linting rule
-let cached: MongooseCache = global.mongoose || { conn: null, promise: null };
-
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
-}
-
 async function connectDB() {
-  if (cached.conn) {
-    return cached.conn;
-  }
-
-  if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGO_URI).then((mongoose) => {
-      return mongoose;
+  try {
+    // Check if the connection is already open
+    if (mongoose.connection.readyState === 1) {
+      return mongoose.connection;
+    }
+    
+    // If not, establish a new connection
+    const connection = await mongoose.connect(MONGO_URI, {
+      // useNewUrlParser: true,
+      // useUnifiedTopology: true,
     });
+    
+    console.log('Connected to MongoDB');
+    return connection;
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error);
+    throw error;
   }
-
-  cached.conn = await cached.promise;
-  return cached.conn;
 }
 
 export default connectDB;
