@@ -1,22 +1,32 @@
 import mongoose from "mongoose";
 
-export async function dbConnect(){
-  try{
-    mongoose.connect(process.env.MONGO_URI!)
+export async function dbConnect() {
+  if (mongoose.connection.readyState >= 1) {
+    // Already connected or connecting
+    console.log("Using existing database connection");
+    return;
+  }
 
-  const connection =  mongoose.connection;
+  try {
+    const mongoUri = process.env.MONGO_URI;
 
-  connection.on('connected', () => {
+    if (!mongoUri) {
+      throw new Error("MONGO_URI environment variable is not set");
+    }
+
+    await mongoose.connect(mongoUri, {
+      // useNewUrlParser: true,
+      // useUnifiedTopology: true,
+    });
+
     console.log("Database connected");
-  });
 
-  connection.on('error', (error) => {
-    console.error("Error connecting to database", error);
-    process.exit();
-  });
-
-  }catch(error){
-    console.error("Error connecting to database", error);
-    console.log(error);
+    mongoose.connection.on('error', (error) => {
+      console.error("Error connecting to the database", error);
+      process.exit(1); // Force exit on critical DB errors
+    });
+  } catch (error) {
+    console.error("Error connecting to the database", error);
+    process.exit(1); // Exit if connection fails
   }
 }

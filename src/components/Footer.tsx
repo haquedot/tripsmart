@@ -9,7 +9,7 @@ import { IoIosMail } from 'react-icons/io';
 
 export default function Footer() {
   return (
-    <footer className="py-12 bg-indigo-100">
+    <footer className="px-4 py-12 bg-indigo-100">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4">
           <div className="block">
@@ -149,7 +149,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-indigo-200 mt-8 pt-4 text-center text-gray-500 flex md:justify-between">
+        <div className="border-t border-indigo-200 mt-8 pt-4 text-center text-gray-500 md:flex md:justify-between">
           <p>&copy; 2024 All rights reserved.</p>
           <p>
             Designed & Developed by{" "}
