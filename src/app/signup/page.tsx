@@ -1,19 +1,16 @@
-// signup/page.tsx
-
 'use client';
 
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import { toast } from 'react-hot-toast';
 
 export default function SignupPage() {
   // State to manage form inputs
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
 
   const router = useRouter();
 
@@ -26,23 +23,23 @@ export default function SignupPage() {
       });
 
       if (response.status === 200) {
-        // Success logic here
-        setSuccess('Signup successful!');
-        setError('');
+        // Success toast
+        toast.success('Signup successful! Redirecting to login...');
         // Clear form fields
         setName('');
         setEmail('');
         setPassword('');
-        // Redirect to login page
-        router.push('/login');
+        // Redirect to login page after successful signup
+        setTimeout(() => {
+          router.push('/login');
+        }, 1500); // Delay for user to see the toast
       } else {
-        setError('Signup failed. Please try again.');
-        setSuccess('');
+        // Show error toast if signup fails
+        toast.error('Signup failed. Please try again.');
       }
     } catch (error) {
       console.error('Error during signup:', error);
-      setError('An error occurred during signup. Please try again.');
-      setSuccess('');
+      toast.error('An error occurred during signup. Please try again.');
     }
   };
 
@@ -107,9 +104,6 @@ export default function SignupPage() {
 
           <Button className="w-full my-4 rounded">Sign Up</Button>
 
-          {error && <p className="text-red-500 mt-4">{error}</p>}
-          {success && <p className="text-green-500 mt-4">{success}</p>}
-
           <hr />
         </form>
         <Button variant={'outline'} className="w-full flex items-center gap-3 rounded">
@@ -120,6 +114,5 @@ export default function SignupPage() {
         </p>
       </div>
     </div>
-
   );
 }
