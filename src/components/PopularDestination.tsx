@@ -57,55 +57,57 @@ const destinations = [
     },
 ];
 
-export function PopularDestination() {
+interface PopularDestinationProps {
+    height?: string; // Optional prop for height, it can be a string (like Tailwind class or px, rem units)
+}
+
+// take height as a prop
+export const PopularDestination: React.FC<PopularDestinationProps> = ({ height }) => {
     return (
-        <section className="container mx-auto py-12 bg-white">
-            <div className="text-center">
-                <h2 className="text-sm md:text-md font-bold text-pink-500 mb-3 tracking-widest"> TOP DESTINATIONS</h2>
-                <h1 className="text-3xl md:text-5xl font-bold mb-12 tracking-wide">Popular Destinations</h1>
-            </div>
-            <div className="md:px-14">
-                <Carousel
-                    plugins={[
-                        Autoplay({
-                            delay: 3000,
-                        }),
-                    ]}
-                    opts={{
-                        align: "center",
-                        loop: true,
-                    }}
-                    className="w-full"
-                >
-                    <CarouselContent>
-                        {destinations.map((destination, index) => (
-                            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                                <div className="p-1">
-                                    <div className="border rounded-3xl overflow-hidden">
-                                        <Image src={destination.image} alt={destination.title} className="w-full" />
-                                        <div className="p-4 space-y-3">
-                                            <h3 className="text-xl font-semibold">{destination.title}</h3>
 
-                                            <p className="text-sm text-gray-600">{destination.subtitle}</p>
+        <div className="">
+            <Carousel
+                plugins={[
+                    Autoplay({
+                        delay: 3000,
+                    }),
+                ]}
+                opts={{
+                    align: "center",
+                    loop: true,
+                }}
+                className="w-full"
+            >
+                <CarouselContent>
+                    {destinations.map((destination, index) => (
+                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                            <div className="p-1">
+                                <div className="border rounded-3xl overflow-hidden">
+                                    <div className="p-3 pb-0 rounded-2xl">
+                                        <Image src={destination.image} alt={destination.title} className={`max-h-36 md:max-h-${height} w-full object-cover rounded-2xl`} />
+                                    </div>
+                                    <div className="p-4 space-y-3">
+                                        <h3 className="text-xl font-semibold">{destination.title}</h3>
 
-                                            <div className="flex items-center text-yellow-500 ">
-                                                <p className="text-orange-500 font-bold gap-1 flex items-center">
-                                                    {destination.rating}
-                                                    <FaStar />
-                                                </p>
-                                            </div>
+                                        <p className="text-sm text-gray-600">{destination.subtitle}</p>
 
-
+                                        <div className="flex items-center text-yellow-500 ">
+                                            <p className="text-orange-500 font-bold gap-1 flex items-center">
+                                                {destination.rating}
+                                                <FaStar />
+                                            </p>
                                         </div>
+
+
                                     </div>
                                 </div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="hidden md:flex"/>
-                    <CarouselNext className="hidden md:flex"/>
-                </Carousel>
-            </div>
-        </section>
+                            </div>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+                <CarouselPrevious className="hidden md:flex -left-3" />
+                <CarouselNext className="hidden md:flex -right-3" />
+            </Carousel>
+        </div>
     );
 }
