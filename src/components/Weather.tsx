@@ -1,8 +1,7 @@
 //  Weather component
 
 import React from 'react';
-import Image from 'next/image';
-import { FaCloud, FaTemperatureHigh, FaWind } from 'react-icons/fa';
+import {  FaTemperatureHigh, FaWind } from 'react-icons/fa';
 
 interface WeatherProps {
     data: {

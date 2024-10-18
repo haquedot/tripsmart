@@ -2,7 +2,6 @@
 
 'use client';
 
-import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
 import { PopularDestination } from "@/components/PopularDestination";
 import Link from "next/link";
