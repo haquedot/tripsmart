@@ -14,7 +14,7 @@ const Home: React.FC = () => {
           <h2 className="text-sm md:text-md font-bold text-pink-500 mb-3 tracking-widest"> TOP DESTINATIONS</h2>
           <h1 className="text-3xl md:text-5xl font-bold mb-12 tracking-wide">Popular Destinations</h1>
         </div>
-        <PopularDestination height={"36"}/>
+        <PopularDestination height={"72"}/>
       </section>
       <Features />
     </div>
