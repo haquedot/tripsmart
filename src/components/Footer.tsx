@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import Logo from './Logo';
+import {Logo} from './Logo';
 import Link from 'next/link';
 import { FaFacebook, FaInstagram, FaLinkedin, FaMapMarkedAlt, FaTwitter } from 'react-icons/fa';
 import { FaArrowRightLong, FaPhoneVolume } from 'react-icons/fa6';
@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4">
           <div className="block">
-            <Logo />
+            <Logo LogoHeight={50} LogoWidth={50} />
 
             <p className="text-gray-500 mt-4">
               We always make our customer happy by providing curated information

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from './ui/button';
-import Logo from './Logo';
+import {Logo} from './Logo';
 import { useRouter } from 'next/navigation';
 import { IoMdClose } from 'react-icons/io';
 import { RiMenu3Fill } from 'react-icons/ri';
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                 <Link href="/" className="flex items-center">
                     <span className="self-center text-xl font-semibold whitespace-nowrap">
-                        <Logo />
+                        <Logo LogoHeight={50} LogoWidth={50} />
                     </span>
                 </Link>
                 <div className="flex gap-2 items-center lg:order-2">
