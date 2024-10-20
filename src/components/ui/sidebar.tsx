@@ -89,11 +89,11 @@ export const DesktopSidebar = ({
     <>
       <motion.div
         className={cn(
-          "h-full px-4 py-4 hidden  md:flex md:flex-col bg-indigo-50 dark:bg-neutral-800 w-[250px] flex-shrink-0",
+          "h-full hidden md:flex md:flex-col max-w-lg flex-shrink-0",
           className
         )}
         animate={{
-          width: animate ? (open ? "250px" : "60px") : "250px",
+          // width: animate ? (open ? "250px" : "60px") : "250px",
         }}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
@@ -176,7 +176,7 @@ export const SidebarLink = ({
         "flex items-center justify-start gap-2  group/sidebar py-2",
         active
           ? "bg-indigo-500 px-3 rounded-md text-neutral-100 dark:text-indigo-400"
-          : "text-neutral-900 px-3 rounded-md dark:text-neutral-200",
+          : "text-neutral-900 px-3 rounded-md dark:text-neutral-200 hover:bg-indigo-100",
 
         className
       )}

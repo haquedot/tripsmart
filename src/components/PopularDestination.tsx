@@ -84,7 +84,7 @@ export const PopularDestination: React.FC<PopularDestinationProps> = ({ height }
                             <div className="p-1">
                                 <div className="border rounded-3xl overflow-hidden">
                                     <div className="p-3 pb-0 rounded-2xl">
-                                        <Image src={destination.image} alt={destination.title} className={`max-h-36 md:max-h-${height} w-full object-cover rounded-2xl`} />
+                                        <Image src={destination.image} alt={destination.title} className={`max-h-${height} w-full object-cover rounded-2xl`} />
                                     </div>
                                     <div className="p-4 space-y-3">
                                         <h3 className="text-xl font-semibold">{destination.title}</h3>

@@ -4,7 +4,7 @@ import { FC } from 'react';
 
 const Calendar: FC = () => {
     return (
-        <div className="shadow-md rounded-2xl text-neutral-100 bg-black p-6 mb-6">
+        <div className="shadow-md rounded-md text-neutral-100 bg-black p-6">
             <h3 className="text-white text-xl font-semibold mb-4">Google Calendar</h3>
             
             {/* Calendar Container */}

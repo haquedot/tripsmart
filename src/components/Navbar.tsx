@@ -3,10 +3,20 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from './ui/button';
-import {Logo} from './Logo';
+import { Logo } from './Logo';
 import { useRouter } from 'next/navigation';
 import { IoMdClose } from 'react-icons/io';
 import { RiMenu3Fill } from 'react-icons/ri';
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { FaUser } from 'react-icons/fa';
+import toast from 'react-hot-toast';
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,18 +37,49 @@ const Navbar: React.FC = () => {
         };
     }, []);
 
+    const handleLogout = () => {
+        document.cookie = `token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+        toast.success('Logout successful!');
+        router.push('/login');
+    }
+
     return (
         <nav
             className={`bg-white px-4 py-2.5 fixed w-full z-20 top-0 left-0 transition-shadow duration-300 ${hasScrolled ? 'shadow-md' : ''
                 }`}
         >
-            <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <div className="container flex flex-wrap justify-between items-center mx-auto">
                 <Link href="/" className="flex items-center">
                     <span className="self-center text-xl font-semibold whitespace-nowrap">
                         <Logo LogoHeight={50} LogoWidth={50} />
                     </span>
                 </Link>
                 <div className="flex gap-2 items-center lg:order-2">
+                    <div className="flex items-center gap-2">
+                        <Button >Create New Trip</Button>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger className='p-2 text-indigo-500 rounded-full border border-indigo-500'>
+                                <FaUser className="h-4 w-4" />
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent>
+                                <DropdownMenuLabel>
+                                    <Link href="/profile">Profile</Link>
+                                </DropdownMenuLabel>
+                                <DropdownMenuSeparator />
+                                <DropdownMenuItem>
+                                    <Link href="/profile">Settings</Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem>
+                                    <Link
+                                        onClick={handleLogout}
+                                        href="/login"
+                                    >
+                                        Logout
+                                    </Link>
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </div>
                     <Button variant={'outline'} onClick={() => router.push('/login')}>Login</Button>
                     <Button onClick={() => router.push('/signup')}>
                         Sign up
@@ -50,7 +91,7 @@ const Navbar: React.FC = () => {
                     aria-controls="mobile-menu"
                     aria-expanded={isOpen}
                 >
-                    <RiMenu3Fill className='font-bold'/>
+                    <RiMenu3Fill className='font-bold' />
                 </button>
 
                 {/* Sidebar Menu for Mobile */}

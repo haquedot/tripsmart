@@ -21,9 +21,9 @@ interface WeatherProps {
 export const Weather: React.FC<WeatherProps> = ({ data }) => {
     return (
         <div className="bg-indigo-50 p-5 rounded-lg">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-6 md:gap-12">
                 <h2 className="text-2xl font-bold">{data.name}</h2>
-                <p className="text-gray-500">{data.weather[0].description}</p>
+                <p className="text-gray-500 m-0">{data.weather[0].description}</p>
             </div>
             <div className="flex items-center justify-between mt-4">
                 <div className="flex items-center gap-2">

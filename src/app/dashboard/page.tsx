@@ -12,7 +12,8 @@ import Notifications from './notification/page';
 import Settings from './settings/page';
 import toast from 'react-hot-toast';
 import { FaTicket } from 'react-icons/fa6';
-import {Logo} from '@/components/Logo';
+import Calendar from '@/components/Calendar';
+// import {Logo} from '@/components/Logo';
 
 type View =
   "dashboard" |
@@ -97,39 +98,41 @@ const UserDashboard = () => {
     <>
       <div
         className={cn(
-          "rounded-md flex flex-col md:flex-row bg-gray-100 w-full flex-1 mx-auto border border-neutral-200 overflow-hidden",
-          "h-screen"
+          "container mx-auto py-20",
         )}
       >
-        <Sidebar open={open} setOpen={setOpen} animate={false}>
-          <SidebarBody className="justify-between gap-10">
-            <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-              <Logo LogoHeight={45} LogoWidth={45}/>
+        <div className="max-w-full flex">
+          <Sidebar open={open} setOpen={setOpen} animate={false}>
+            <SidebarBody className="justify-between gap-4">
+              <div className="flex flex-col flex-1 px-4 py-4 rounded-md bg-indigo-50 dark:bg-neutral-800  overflow-y-auto overflow-x-hidden">
+                {/* <Logo LogoHeight={45} LogoWidth={45}/> */}
 
-              <div className="mt-8 flex flex-col gap-2">
-                {links.map((link, idx) => (
-                  <SidebarLink
-                    key={idx}
-                    link={link}
-                    active={view === link.view}
-                    onClick={() => handleLinkClick(link.view)}
+                <div className="flex flex-col gap-2">
+                  {links.map((link, idx) => (
+                    <SidebarLink
+                      key={idx}
+                      link={link}
+                      active={view === link.view}
+                      onClick={() => handleLinkClick(link.view)}
                     />
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-            <div>
-              <button
-                onClick={handleLogout}
-                className="flex flex-center text-red-500 hover:text-red-600"
-              >
-                <IoMdLogOut className="h-5 w-5 flex-shrink-0" />
-                <span className="ml-2">Logout</span>
-              </button>
-            </div>
-          </SidebarBody>
-        </Sidebar>
-        <div className="flex-1 rounded-t-2xl md:rounded-l-2xl md:rounded-r-none border border-indigo-200 p-4 md:p-6 bg-white max-h-screen overflow-y-auto">
-          {renderView()}
+              <div>
+                <Calendar />
+                {/* <button
+                  onClick={handleLogout}
+                  className="flex flex-center text-red-500 hover:text-red-600"
+                >
+                  <IoMdLogOut className="h-5 w-5 flex-shrink-0" />
+                  <span className="ml-2">Logout</span>
+                </button> */}
+              </div>
+            </SidebarBody>
+          </Sidebar>
+          <div className="w-full flex-1 px-4 md:px-6 md:pe-0">
+            {renderView()}
+          </div>
         </div>
       </div>
     </>

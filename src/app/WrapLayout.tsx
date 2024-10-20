@@ -12,7 +12,7 @@ const WrapLayout = ({ children }: { children: React.ReactNode }) => {
     const pathname = usePathname();
 
     // Define routes where the Navbar should be hidden
-    const hideNavbarRoutes = ["/dashboard", "/signup", "/login",];
+    const hideNavbarRoutes = ["/signup", "/login",];
     const shouldShowNavbar = !hideNavbarRoutes.includes(pathname);
 
     return (
