@@ -32,8 +32,8 @@ export default function Dashboard() {
                         <div className="hidden md:flex">
                             <Weather 
                                 data={{
-                                    name: "Mumbai",
-                                    main: { temp: 30 },
+                                    name: "Hyderabad",
+                                    main: { temp: 27 },
                                     weather: [{ description: "Cloudy" }],
                                     wind: { speed: 5 }
                                 }}
