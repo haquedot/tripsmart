@@ -101,7 +101,7 @@ const UserDashboard = () => {
           "container mx-auto py-20",
         )}
       >
-        <div className="max-w-full flex">
+        <div className="max-w-full lg:flex">
           <Sidebar open={open} setOpen={setOpen} animate={false}>
             <SidebarBody className="justify-between gap-4">
               <div className="flex flex-col flex-1 px-4 py-4 rounded-md bg-indigo-50 dark:bg-neutral-800  overflow-y-auto overflow-x-hidden">

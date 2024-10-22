@@ -10,6 +10,7 @@ import { TripHistory } from "@/components/TripHistory";
 import NearMe from "@/components/NearMe";
 import { Weather } from "@/components/Weather";
 import { MdWavingHand } from "react-icons/md";
+import UpcomingTrip from "@/components/UpcomingTrip";
 
 
 export default function Dashboard() {
@@ -30,7 +31,7 @@ export default function Dashboard() {
                             </Link>
                         </div>
                         <div className="hidden md:flex">
-                            <Weather 
+                            <Weather
                                 data={{
                                     name: "Hyderabad",
                                     main: { temp: 27 },
@@ -43,6 +44,14 @@ export default function Dashboard() {
                     <h2 className="flex items-center text-3xl font-semibold mb-4">Hi, <span className="text-indigo-500 mx-2">Anni</span> <MdWavingHand className="text-yellow-500" /></h2>
                     <p className="text-gray-600 mb-6">Welcome back and explore the world.</p>
 
+                    <div className="mb-4">
+                        {/* View all */}
+                        <div className="flex justify-between items-center mb-6">
+                            <h2 className="text-xl font-semibold">Upcoming Trips</h2>
+                            <Link href="#" className="text-sm text-indigo-600">View all</Link>
+                        </div>
+                        <UpcomingTrip />
+                    </div>
                     <div className="mb-4">
                         {/* View all */}
                         <div className="flex justify-between items-center mb-6">
