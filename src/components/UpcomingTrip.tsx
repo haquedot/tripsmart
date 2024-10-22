@@ -5,7 +5,7 @@ import React from 'react';
 import Image from 'next/image';
 import img1 from '../../public/images/destination2.jpg';
 import { FaLocationDot } from 'react-icons/fa6';
-import { FaCalendar } from 'react-icons/fa';
+import { FaCalendar, FaEye } from 'react-icons/fa';
 import Link from 'next/link';
 
 // upcoming trips data with date
@@ -68,8 +68,9 @@ export default function UpcomingTrip() {
                             </div>
                             <div className="flex justify-end">
                                 <Link href="#" className="">
-                                    View
+                                    <FaEye className="text-indigo-500 text-2xl transition duration-300 ease-in-out transform hover:text-indigo-700 hover:scale-150" />
                                 </Link>
+
                             </div>
                         </div>
                     </div>
