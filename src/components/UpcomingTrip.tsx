@@ -68,7 +68,7 @@ export default function UpcomingTrip() {
                             </div>
                             <div className="flex justify-end">
                                 <Link href="#" className="">
-                                    <FaEye className="text-indigo-500 text-2xl transition duration-300 ease-in-out transform hover:text-indigo-700 hover:scale-150" />
+                                    <FaEye className="text-indigo-500 text-xl transition duration-300 ease-in-out transform hover:text-indigo-700 hover:scale-150" />
                                 </Link>
 
                             </div>
