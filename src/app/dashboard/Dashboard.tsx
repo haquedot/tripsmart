@@ -41,14 +41,14 @@ export default function Dashboard() {
                             />
                         </div>
                     </div>
-                    <h2 className="flex items-center text-3xl font-semibold mb-4">Hi, <span className="text-indigo-500 mx-2">Anni</span> <MdWavingHand className="text-yellow-500" /></h2>
+                    <h2 className="flex items-center text-3xl font-semibold mb-4">Hi, <span className="text-pink-500 mx-2">Anni</span> <MdWavingHand className="text-yellow-500" /></h2>
                     <p className="text-gray-600 mb-6">Welcome back and explore the world.</p>
 
                     <div className="mb-4">
                         {/* View all */}
                         <div className="flex justify-between items-center mb-6">
                             <h2 className="text-xl font-semibold">Upcoming Trips</h2>
-                            <Link href="#" className="text-sm text-indigo-600">View all</Link>
+                            <Link href="#" className="text-sm text-pink-600">View all</Link>
                         </div>
                         <UpcomingTrip />
                     </div>
@@ -56,7 +56,7 @@ export default function Dashboard() {
                         {/* View all */}
                         <div className="flex justify-between items-center mb-6">
                             <h2 className="text-xl font-semibold">Popular Destinations</h2>
-                            <Link href="#" className="text-sm text-indigo-600">View all</Link>
+                            <Link href="#" className="text-sm text-pink-600">View all</Link>
                         </div>
                         <PopularDestination height={"40"} />
                     </div>
@@ -64,14 +64,14 @@ export default function Dashboard() {
                         <div className="">
                             <div className="flex justify-between items-center mb-6">
                                 <h2 className="text-lg font-bold">Near me</h2>
-                                <Link href="#" className="text-sm text-indigo-600">View all</Link>
+                                <Link href="#" className="text-sm text-pink-600">View all</Link>
                             </div>
                             <NearMe />
                         </div>
                         <div className="">
                             <div className="flex justify-between items-center mb-6">
                                 <h2 className="text-lg font-bold">Your trips</h2>
-                                <Link href="#" className="text-sm text-indigo-600">View all</Link>
+                                <Link href="#" className="text-sm text-pink-600">View all</Link>
                             </div>
                             <TripHistory noOfTrips={2} />
                         </div>

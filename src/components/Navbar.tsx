@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
                                 <DialogTrigger asChild>
                                     <Button variant="outline">Create New Trip</Button>
                                 </DialogTrigger>
-                                <DialogContent className="max-w-[425px]">
+                                <DialogContent className="max-w-[625px]">
                                     <CreateTripForm />
                                 </DialogContent>
                             </Dialog>
