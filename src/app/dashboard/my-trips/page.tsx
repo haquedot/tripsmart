@@ -18,11 +18,11 @@ export default function MyTrips() {
                     <h6 className="text-sm text-neutral-700 font-bold mb-4">2022</h6>
                     {trips.map((trip, idx) => (
                         trip.year === "2022" && (
-                            <div key={idx} className="bg-indigo-50 rounded-2xl p-2 pe-4 flex items-start gap-3 mb-3">
+                            <div key={idx} className="bg-pink-50 rounded-2xl p-2 pe-4 flex items-start gap-3 mb-3">
                                 <Image src={trip.image} alt="img1" className="rounded-xl max-w-20 max-h-20 object-cover" />
                                 <div className="">
                                     <h4 className="text-lg text-neutral-800 font-bold mb-2">{trip.title}</h4>
-                                    <p className="flex items-center gap-2 text-neutral-600 text-sm font-semibold"><FaRegCalendar className=" text-indigo-500" />{trip.Date}</p>
+                                    <p className="flex items-center gap-2 text-neutral-600 text-sm font-semibold"><FaRegCalendar className=" text-pink-500" />{trip.Date}</p>
                                 </div>
                             </div>
                         )
@@ -32,11 +32,11 @@ export default function MyTrips() {
                     <h6 className="text-sm text-neutral-700 font-bold mb-4">2023</h6>
                     {trips.map((trip, idx) => (
                         trip.year === "2022" && (
-                            <div key={idx} className="bg-indigo-50 rounded-2xl p-2 pe-4 flex items-start gap-3 mb-3">
+                            <div key={idx} className="bg-pink-50 rounded-2xl p-2 pe-4 flex items-start gap-3 mb-3">
                                 <Image src={trip.image} alt="img1" className="rounded-xl max-w-20 max-h-20 object-cover" />
                                 <div className="">
                                     <h4 className="text-lg text-neutral-800 font-bold mb-2">{trip.title}</h4>
-                                    <p className="flex items-center gap-2 text-neutral-600 text-sm font-semibold"><FaRegCalendar className=" text-indigo-500" /> {trip.Date}</p>
+                                    <p className="flex items-center gap-2 text-neutral-600 text-sm font-semibold"><FaRegCalendar className=" text-pink-500" /> {trip.Date}</p>
                                 </div>
                             </div>
                         )
