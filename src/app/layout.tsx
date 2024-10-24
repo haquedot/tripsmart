@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} style={{scrollBehavior:'smooth'}}>
         <WrapLayout>{children}</WrapLayout> {/* Wrap children with WrapLayout */}
         {/* <Analytics /> Include Vercel analytics */}
       </body>
