@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="flex py-20 px-[30px]">
+        <div className="sm:w-10/12 mx-auto flex py-20 px-4 gap-4">
           <DashboardSidebar />
           {children}
         </div>

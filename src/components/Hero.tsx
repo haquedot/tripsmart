@@ -7,7 +7,7 @@ export default function Hero() {
     return (
         <>
             <section className="min-h-screen flex justify-center items-center py-20">
-                <div className="container mx-auto">
+                <div className="mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2">
                         <div className="flex items-center justify-center text-center md:text-start">
                             <div className="space-y-12">

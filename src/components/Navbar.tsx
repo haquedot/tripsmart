@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
                 className={`bg-white px-4 py-2.5 fixed w-full z-20 top-0 left-0 transition-shadow duration-300 ${hasScrolled ? 'shadow-md' : ''
                     }`}
             >
-                <div className="container flex flex-wrap justify-between items-center mx-auto">
+                <div className="sm:w-10/12 mx-auto flex flex-wrap justify-between items-center mx-auto">
                     <Link href="/" className="flex items-center">
                         <span className="self-center text-xl font-semibold whitespace-nowrap">
                             <Logo LogoHeight={50} LogoWidth={50} />

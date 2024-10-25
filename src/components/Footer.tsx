@@ -10,7 +10,7 @@ import { IoIosMail } from 'react-icons/io';
 export default function Footer() {
   return (
     <footer className="px-4 py-12 bg-indigo-100">
-      <div className="container mx-auto">
+      <div className="sm:w-10/12 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4">
           <div className="block">
             <Logo LogoHeight={50} LogoWidth={50} />
