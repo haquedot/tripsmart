@@ -1,11 +1,11 @@
 //  Weather component
 
 import React from 'react';
-import {  FaTemperatureHigh, FaWind } from 'react-icons/fa';
+import { FaTemperatureHigh, FaWind } from 'react-icons/fa';
 
 interface WeatherProps {
     data: {
-        name: string;
+        name?: string;
         main: {
             temp: number;
         };
