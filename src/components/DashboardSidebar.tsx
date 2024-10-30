@@ -33,13 +33,13 @@ const DashboardSidebar = () => {
 
     {
       label: "Notifications",
-      href: "#",
+      href: "/dashboard/notification",
       icon: <IoIosNotifications className="h-5 w-5 flex-shrink-0" />,
       view: "notifications" as View,
     },
     {
       label: "Account Settings",
-      href: "#",
+      href: "/dashboard/settings",
       icon: <IoMdSettings className="h-5 w-5 flex-shrink-0" />,
       view: "settings" as View,
     },

@@ -3,57 +3,17 @@
 
 import React from 'react';
 import Image from 'next/image';
-import img1 from '../../public/images/destination2.jpg';
 import { FaLocationDot } from 'react-icons/fa6';
 import { FaCalendar, FaEye } from 'react-icons/fa';
 import Link from 'next/link';
-
-// upcoming trips data with date
-const upcomingTrips = [
-    {
-        title: 'Kerala',
-        country: 'India',
-        image: img1,
-        date: '2022-06-20',
-    },
-    {
-        title: 'Eiffel Tower Tour',
-        country: 'India',
-        image: img1,
-        date: '2022-06-20',
-    },
-    {
-        title: 'Kerala',
-        country: 'India',
-        image: img1,
-        date: '2022-06-20',
-    },
-    {
-        title: 'Eiffel Tower Tour',
-        country: 'India',
-        image: img1,
-        date: '2022-06-20',
-    },
-    {
-        title: 'Kerala',
-        country: 'India',
-        image: img1,
-        date: '2022-06-20',
-    },
-    {
-        title: 'Eiffel Tower Tour',
-        country: 'India',
-        image: img1,
-        date: '2022-06-20',
-    },
-];
+import { upcomingTrips } from '@/lib/upcomingTripData';
 
 export default function UpcomingTrip() {
     return (
         <>
             <section className="mb-4">
                 {upcomingTrips.slice(0, 2).map((trip, idx) => (
-                    <div key={idx} className="h-full flex border-2 border-pink-100 rounded-2xl mb-3">
+                    <Link href={'/upcoming-trip'} key={idx} className="h-full flex border-2 border-pink-100 rounded-2xl mb-3">
                         <div className="flex">
                             <Image src={trip.image} alt="img1" className="rounded-l-xl max-w-36 max-h-24 md:max-w-96 md:max-h-64 object-cover" />
                         </div>
@@ -73,7 +33,7 @@ export default function UpcomingTrip() {
 
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </section>
 

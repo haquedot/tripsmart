@@ -73,11 +73,11 @@ const Navbar: React.FC = () => {
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent>
                                     <DropdownMenuLabel>
-                                        <Link href="/profile">Profile</Link>
+                                        <Link href="/dashboard">Profile</Link>
                                     </DropdownMenuLabel>
                                     <DropdownMenuSeparator />
                                     <DropdownMenuItem>
-                                        <Link href="/profile">Settings</Link>
+                                        <Link href="/dashboard/settings">Settings</Link>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem>
                                         <Link
