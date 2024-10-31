@@ -31,7 +31,7 @@ export default function Dashboard() {
                 />
               </div>
               <Link
-                href="#"
+                href="/dashboard/notification"
                 className="bg-neutral-200 p-2 rounded-full text-neutral-900-500"
               >
                 <IoIosNotificationsOutline className="text-lg md:text-2xl" />

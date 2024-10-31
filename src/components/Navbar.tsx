@@ -39,6 +39,7 @@ const Navbar: React.FC = () => {
         };
     }, []);
 
+
     const handleLogout = () => {
         document.cookie = `token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
         toast.success('Logout successful!');
@@ -61,39 +62,43 @@ const Navbar: React.FC = () => {
                         <div className="flex items-center gap-2">
                             <Dialog>
                                 <DialogTrigger asChild>
-                                    <Button variant="outline">Create New Trip</Button>
+                                    <Button>Create New Trip</Button>
                                 </DialogTrigger>
                                 <DialogContent className="max-w-[625px]">
                                     <CreateTripForm />
                                 </DialogContent>
                             </Dialog>
-                            <DropdownMenu>
-                                <DropdownMenuTrigger className='p-2 text-indigo-500 rounded-full border border-indigo-500'>
-                                    <FaUser className="h-4 w-4" />
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent>
-                                    <DropdownMenuLabel>
-                                        <Link href="/dashboard">Profile</Link>
-                                    </DropdownMenuLabel>
-                                    <DropdownMenuSeparator />
-                                    <DropdownMenuItem>
-                                        <Link href="/dashboard/settings">Settings</Link>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem>
-                                        <Link
-                                            onClick={handleLogout}
-                                            href="/login"
-                                        >
-                                            Logout
-                                        </Link>
-                                    </DropdownMenuItem>
-                                </DropdownMenuContent>
-                            </DropdownMenu>
+                            {/* show dropdown menu if token is available in cookie only */}
+                            {
+                                document.cookie.includes('token') ? (
+                                    <DropdownMenu>
+                                        <DropdownMenuTrigger asChild>
+                                            <Button variant="outline">
+                                                <FaUser />
+                                            </Button>
+                                        </DropdownMenuTrigger>
+                                        <DropdownMenuContent>
+                                            <DropdownMenuLabel>Profile</DropdownMenuLabel>
+                                            <DropdownMenuItem>
+                                                <Link href="/dashboard">My Profile</Link>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuSeparator />
+                                            <DropdownMenuItem>
+                                                <button onClick={handleLogout}>Logout</button>
+                                            </DropdownMenuItem>
+                                        </DropdownMenuContent>
+                                    </DropdownMenu>
+                                ) : (
+                                    <div className="flex">
+                                        <Button variant={'outline'} onClick={() => router.push('/login')}>Login</Button>
+                                        <Button onClick={() => router.push('/signup')}>
+                                            Sign up
+                                        </Button>
+                                    </div>
+                                )
+                            }
                         </div>
-                        <Button variant={'outline'} onClick={() => router.push('/login')}>Login</Button>
-                        <Button onClick={() => router.push('/signup')}>
-                            Sign up
-                        </Button>
+
                     </div>
                     <button
                         onClick={() => setIsOpen(!isOpen)}
