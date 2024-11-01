@@ -84,7 +84,7 @@ export const DesktopSidebar = ({
   children,
   ...props
 }: React.ComponentProps<typeof motion.div>) => {
-  const { open, setOpen, animate } = useSidebar();
+  const {  setOpen } = useSidebar();
   return (
     <>
       <motion.div

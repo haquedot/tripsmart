@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button"
 import {
-    Dialog,
-    DialogContent,
     DialogDescription,
     DialogFooter,
     DialogHeader,
@@ -14,7 +12,7 @@ export default function CreateTripForm() {
             <DialogHeader>
                 <DialogTitle>Create a new trip</DialogTitle>
                 <DialogDescription>
-                    Create a new trip here. Click save when you're done.
+                    Create a new trip here. Click save when you are done.
                 </DialogDescription>
             </DialogHeader>
             <div className="grid gap-4 py-4">

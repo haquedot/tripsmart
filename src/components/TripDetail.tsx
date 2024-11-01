@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { FaCalendar } from 'react-icons/fa';
-import Link from 'next/link';
 import { upcomingTrips } from '@/lib/upcomingTripData';
 import { FaLocationDot } from 'react-icons/fa6';
 import { Weather } from './Weather';

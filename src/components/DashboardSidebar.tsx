@@ -2,9 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import { MdDashboard } from "react-icons/md";
-import { IoIosNotifications, IoMdLogOut, IoMdSettings } from "react-icons/io";
+import { IoIosNotifications, IoMdSettings } from "react-icons/io";
 import { useState } from "react";
-import { cn } from "@/lib/utils";
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
 import toast from "react-hot-toast";
 import { FaTicket } from "react-icons/fa6";
