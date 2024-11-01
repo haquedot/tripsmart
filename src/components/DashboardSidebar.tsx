@@ -1,18 +1,15 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { MdDashboard } from "react-icons/md";
 import { IoIosNotifications, IoMdSettings } from "react-icons/io";
 import { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
-import toast from "react-hot-toast";
 import { FaTicket } from "react-icons/fa6";
 import Calendar from "@/components/Calendar";
 import { usePathname } from "next/navigation";
 type View = "dashboard" | "myTrips" | "notifications" | "settings";
 
 const DashboardSidebar = () => {
-  const router = useRouter();
   const pathName = usePathname();
   const [open, setOpen] = useState(false);
 
