@@ -23,6 +23,7 @@ import { Dialog, DialogContent, DialogTrigger } from './ui/dialog';
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [hasScrolled, setHasScrolled] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const router = useRouter();
     const pathname = usePathname();
 
@@ -31,16 +32,24 @@ const Navbar: React.FC = () => {
             setHasScrolled(window.scrollY > 0);
         };
 
-        window.addEventListener('scroll', handleScroll);
+        if (typeof window !== "undefined") {
+            window.addEventListener('scroll', handleScroll);
+            setIsAuthenticated(document.cookie.includes('token'));
+        }
+
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            if (typeof window !== "undefined") {
+                window.removeEventListener('scroll', handleScroll);
+            }
         };
     }, []);
 
     const handleLogout = () => {
-        document.cookie = `token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
-        toast.success('Logout successful!');
-        router.push('/login');
+        if (typeof window !== "undefined") {
+            document.cookie = `token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+            toast.success('Logout successful!');
+            router.push('/login');
+        }
     };
 
     const isActiveLink = (path: string) => pathname === path ? 'text-indigo-500' : 'text-gray-700';
@@ -64,32 +73,30 @@ const Navbar: React.FC = () => {
                                     <CreateTripForm />
                                 </DialogContent>
                             </Dialog>
-                            {
-                                document.cookie.includes('token') ? (
-                                    <DropdownMenu>
-                                        <DropdownMenuTrigger asChild>
-                                            <Button variant="outline">
-                                                <FaUser />
-                                            </Button>
-                                        </DropdownMenuTrigger>
-                                        <DropdownMenuContent>
-                                            <DropdownMenuLabel>Profile</DropdownMenuLabel>
-                                            <DropdownMenuItem>
-                                                <Link href="/dashboard">My Profile</Link>
-                                            </DropdownMenuItem>
-                                            <DropdownMenuSeparator />
-                                            <DropdownMenuItem>
-                                                <button onClick={handleLogout}>Logout</button>
-                                            </DropdownMenuItem>
-                                        </DropdownMenuContent>
-                                    </DropdownMenu>
-                                ) : (
-                                    <div className="flex gap-2">
-                                        <Button variant="outline" onClick={() => router.push('/login')}>Login</Button>
-                                        <Button onClick={() => router.push('/signup')}>Sign up</Button>
-                                    </div>
-                                )
-                            }
+                            {isAuthenticated ? (
+                                <DropdownMenu>
+                                    <DropdownMenuTrigger asChild>
+                                        <Button variant="outline">
+                                            <FaUser />
+                                        </Button>
+                                    </DropdownMenuTrigger>
+                                    <DropdownMenuContent>
+                                        <DropdownMenuLabel>Profile</DropdownMenuLabel>
+                                        <DropdownMenuItem>
+                                            <Link href="/dashboard">My Profile</Link>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuSeparator />
+                                        <DropdownMenuItem>
+                                            <button onClick={handleLogout}>Logout</button>
+                                        </DropdownMenuItem>
+                                    </DropdownMenuContent>
+                                </DropdownMenu>
+                            ) : (
+                                <div className="flex gap-2">
+                                    <Button variant="outline" onClick={() => router.push('/login')}>Login</Button>
+                                    <Button onClick={() => router.push('/signup')}>Sign up</Button>
+                                </div>
+                            )}
                         </div>
                     </div>
                     <button onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center p-2 ml-1 text-sm text-black lg:hidden" aria-controls="mobile-menu" aria-expanded={isOpen}>
