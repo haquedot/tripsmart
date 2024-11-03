@@ -76,6 +76,26 @@ export const upcomingTrips = [
                 image: img1,
             },
         ],
+        nearPharmaciesFromHotel: [
+            {
+                name: 'Pharmacy 1',
+                distance: 10,
+                rating: 4,
+                image: img1,
+            },
+            {
+                name: 'Pharmacy 2',
+                distance: 20,
+                rating: 3,
+                image: img1,
+            },
+            {
+                name: 'Pharmacy 3',
+                distance: 30,
+                rating: 5,
+                image: img1,
+            },
+        ],
 
 
     },
