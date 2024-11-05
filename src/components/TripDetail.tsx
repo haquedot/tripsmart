@@ -51,6 +51,9 @@ export default function TripDetail() {
                         <button onClick={() => setActiveTab('hospitals')} className={`text-sm font-semibold text-neutral-800 py-2 ${activeTab === 'hospitals' ? 'border-b-4 border-pink-500' : ''}`}>
                             Near Hospitals
                         </button>
+                        <button onClick={() => setActiveTab('localServices')} className={`text-sm font-semibold text-neutral-800 py-2 ${activeTab === 'localServices' ? 'border-b-4 border-pink-500' : ''}`}>
+                            Local Services
+                        </button>
                     </nav>
 
                     {/* Conditional Rendering Based on Active Tab */}
@@ -152,6 +155,26 @@ export default function TripDetail() {
                         </div>
                     ) : (
                         activeTab === 'attractions' && <p className="mt-5 text-neutral-600">No nearby hospitals available.</p>
+                    )}
+
+                    {activeTab === 'localServices' && trip.localServices?.length ? (
+                        <div className="mt-8">
+                            <h2 className="text-2xl font-semibold text-neutral-800 mb-3">Local Services</h2>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                {trip.localServices.map((place, index) => (
+                                    <div key={index} className="rounded-xl border gap-3">
+                                        <Image src={place.image} alt={place.name} className="rounded-t-xl object-cover" />
+                                        <div className='p-4'>
+                                            <h3 className="text-lg font-semibold">{place.name}</h3>
+                                            <p className="text-sm text-neutral-600">Distance: {place.distance} km</p>
+                                            <p className="text-sm text-neutral-600">Rating: {place.rating} stars</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ) : (
+                        activeTab === 'localServices' && <p className="mt-5 text-neutral-600">No nearby local services available.</p>
                     )}
                 </div>
 

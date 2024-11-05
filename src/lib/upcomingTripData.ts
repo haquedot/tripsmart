@@ -116,6 +116,26 @@ export const upcomingTrips = [
                 image: img1,
             },
         ],
+        localServices: [
+            {
+                name: 'Service 1',
+                distance: 10,
+                rating: 4,
+                image: img1,
+            },
+            {
+                name: 'Service 2',
+                distance: 20,
+                rating: 3,
+                image: img1,
+            },
+            {
+                name: 'Service 3',
+                distance: 30,
+                rating: 5,
+                image: img1,
+            },
+        ],
 
     },
     {
