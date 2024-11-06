@@ -5,7 +5,8 @@ import Image from 'next/image';
 import { FaCalendar } from 'react-icons/fa';
 import { upcomingTrips } from '@/lib/upcomingTripData';
 import { FaLocationDot } from 'react-icons/fa6';
-import { Weather } from './Weather';
+import Weather from './Weather';
+// import { Weather } from './Weather';
 
 export default function TripDetail() {
     const [activeTab, setActiveTab] = useState('hotels'); // State to manage active tab
@@ -180,14 +181,8 @@ export default function TripDetail() {
 
                 <div className='md:w-5/12'>
                     {/* Weather Information */}
-                    <Weather
-                        data={{
-                            name: trip.destination,
-                            main: { temp: 27 },
-                            weather: [{ description: "Cloudy" }],
-                            wind: { speed: 5 },
-                        }}
-                    />
+                    <Weather city="Hyderabad" />
+
 
                     {/* Map Embed */}
                     <div className="rounded-x mt-4">

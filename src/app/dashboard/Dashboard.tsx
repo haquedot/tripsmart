@@ -8,9 +8,9 @@ import Link from "next/link";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { TripHistory } from "@/components/TripHistory";
 import NearMe from "@/components/NearMe";
-import { Weather } from "@/components/Weather";
 import { MdWavingHand } from "react-icons/md";
 import UpcomingTrip from "@/components/UpcomingTrip";
+import Weather from "@/components/Weather";
 
 export default function Dashboard() {
   return (
@@ -38,14 +38,7 @@ export default function Dashboard() {
               </Link>
             </div>
             <div className="hidden md:flex">
-              <Weather
-                data={{
-                  name: "Hyderabad",
-                  main: { temp: 27 },
-                  weather: [{ description: "Cloudy" }],
-                  wind: { speed: 5 },
-                }}
-              />
+              <Weather city="Kerala" />
             </div>
           </div>
           <h2 className="flex items-center text-3xl font-semibold mb-4">
