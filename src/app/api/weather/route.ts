@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
         });
 
         return NextResponse.json(response.data);
-    } catch (error) {
+    } catch{
         return NextResponse.json({ error: "Error fetching weather data" }, { status: 500 });
     }
 }

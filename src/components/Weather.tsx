@@ -33,7 +33,7 @@ const Weather: React.FC<{ city: string }> = ({ city }) => {
                 }
                 const data = await response.json();
                 setData(data);
-            } catch (error) {
+            } catch {
                 setError("Could not fetch weather data");
             }
         };
