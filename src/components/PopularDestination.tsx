@@ -58,10 +58,9 @@ const destinations = [
 ];
 
 interface PopularDestinationProps {
-    height?: string; // Optional prop for height, it can be a string (like Tailwind class or px, rem units)
+    height?: string;
 }
 
-// take height as a prop
 export const PopularDestination: React.FC<PopularDestinationProps> = ({ height }) => {
     return (
 
