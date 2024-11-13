@@ -11,8 +11,15 @@ import {
 
 import Autoplay from "embla-carousel-autoplay"
 
-
 import destination1 from "../../public/images/destination1.png"
+import Rome from "../../public/images/Rome.jpg"
+import Bali from "../../public/images/Bali.jpg"
+import Paris from "../../public/images/Paris.jpg"
+import Santorini from "../../public/images/Santorini.jpg"
+import Kyoto from "../../public/images/Kyoto.jpg"
+
+
+
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 
@@ -26,33 +33,33 @@ const destinations = [
         rating: 4.8,
     },
     {
-        title: "Paradise Beach, Bantayan Island",
+        title: "Metropolitan City of Rome Capital Italy",
         subtitle: "Rome, Italy",
-        image: destination1,
+        image: Rome,
         rating: 4.5,
     },
     {
-        title: "Paradise Beach, Bantayan Island",
+        title: "The westernmost of the Lesser Sunda Islands",
         subtitle: "Bali, Indonesia",
-        image: destination1,
+        image: Bali,
         rating: 4.7,
     },
     {
-        title: "Paradise Beach, Bantayan Island",
+        title: "The Eiffel Tower in Paris",
         subtitle: "Paris, France",
-        image: destination1,
+        image: Paris,
         rating: 4.9,
     },
     {
-        title: "Paradise Beach, Bantayan Island",
+        title: "The island of Santorini",
         subtitle: "Santorini, Greece",
-        image: destination1,
+        image: Santorini,
         rating: 4.6,
     },
     {
-        title: "Paradise Beach, Bantayan Island",
+        title: "The classical Buddhist temples",
         subtitle: "Kyoto, Japan",
-        image: destination1,
+        image: Kyoto,
         rating: 4.8,
     },
 ];

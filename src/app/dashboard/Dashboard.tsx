@@ -38,11 +38,11 @@ export default function Dashboard() {
               </Link>
             </div>
             <div className="hidden md:flex">
-              <Weather city="Kerala" />
+              <Weather city="Hyderabad" />
             </div>
           </div>
           <h2 className="flex items-center text-3xl font-semibold mb-4">
-            Hi, <span className="text-pink-500 mx-2">Anni</span>{" "}
+            Hi, <span className="text-pink-500 mx-2">Meraj</span>{" "}
             <MdWavingHand className="text-yellow-500" />
           </h2>
           <p className="text-gray-600 mb-6">

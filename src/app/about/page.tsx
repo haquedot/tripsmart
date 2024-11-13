@@ -16,7 +16,7 @@ export default function About() {
             
             {/* Company Overview Section */}
             <section className="w-full max-w-4xl bg-white rounded-lg shadow-md p-8 mb-8">
-                <h2 className="text-2xl font-semibold text-gray-800">Who We Are</h2>
+                <h2 className="text-2xl font-semibold text-gray-800">Who are we?</h2>
                 <p className="text-gray-700 mt-4">
                     TripSmart is a forward-thinking travel platform designed to simplify and enhance every step of your journey. Whether you are exploring new destinations or planning a business trip, our solutions make it easy, accessible, and smart.
                 </p>
