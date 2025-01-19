@@ -7,7 +7,7 @@ export default function Settings() {
 
     return (
         <div className="flex flex-col lg:h-screen">
-            {/* Sidebar */}
+            {/* Sidebar page*/}
             <aside className="w-full mb-3">
                 <nav className="flex">
                     <button
