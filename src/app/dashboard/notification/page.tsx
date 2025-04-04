@@ -31,6 +31,7 @@ export default function Notifications() {
 
     return (
         <div className="w-full flex flex-col lg:h-screen">
+            {/**=== notification page  =======*/}
             <div className="w-full flex flex-col gap-2">
                 {notifications.map((notification) => (
                     <div key={notification.id} className="w-full flex justify-between bg-pink-50 p-3 rounded-md">

@@ -5,7 +5,8 @@ import Image from 'next/image';
 import { FaCalendar } from 'react-icons/fa';
 import { upcomingTrips } from '@/lib/upcomingTripData';
 import { FaLocationDot } from 'react-icons/fa6';
-import { Weather } from './Weather';
+import Weather from './Weather';
+// import { Weather } from './Weather';
 
 export default function TripDetail() {
     const [activeTab, setActiveTab] = useState('hotels'); // State to manage active tab
@@ -44,6 +45,15 @@ export default function TripDetail() {
                         </button>
                         <button onClick={() => setActiveTab('attractions')} className={`text-sm font-semibold text-neutral-800 py-2 ${activeTab === 'attractions' ? 'border-b-4 border-pink-500' : ''}`}>
                             Attractions
+                        </button>
+                        <button onClick={() => setActiveTab('pharmacies')} className={`text-sm font-semibold text-neutral-800 py-2 ${activeTab === 'pharmacies' ? 'border-b-4 border-pink-500' : ''}`}>
+                            Near Pharmacies
+                        </button>
+                        <button onClick={() => setActiveTab('hospitals')} className={`text-sm font-semibold text-neutral-800 py-2 ${activeTab === 'hospitals' ? 'border-b-4 border-pink-500' : ''}`}>
+                            Near Hospitals
+                        </button>
+                        <button onClick={() => setActiveTab('localServices')} className={`text-sm font-semibold text-neutral-800 py-2 ${activeTab === 'localServices' ? 'border-b-4 border-pink-500' : ''}`}>
+                            Local Services
                         </button>
                     </nav>
 
@@ -107,18 +117,72 @@ export default function TripDetail() {
                     ) : (
                         activeTab === 'attractions' && <p className="mt-5 text-neutral-600">No nearby attractions available.</p>
                     )}
+
+                    {activeTab === 'pharmacies' && trip.nearPharmaciesFromHotel?.length ? (
+                        <div className="mt-8">
+                            <h2 className="text-2xl font-semibold text-neutral-800 mb-3">Nearby Pharmacies</h2>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                {trip.nearPharmaciesFromHotel.map((place, index) => (
+                                    <div key={index} className="rounded-xl border gap-3">
+                                        <Image src={place.image} alt={place.name} className="rounded-t-xl object-cover" />
+                                        <div className='p-4'>
+                                            <h3 className="text-lg font-semibold">{place.name}</h3>
+                                            <p className="text-sm text-neutral-600">Distance: {place.distance} km</p>
+                                            <p className="text-sm text-neutral-600">Rating: {place.rating} stars</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ) : (
+                        activeTab === 'attractions' && <p className="mt-5 text-neutral-600">No nearby pharmacies available.</p>
+                    )}
+
+                    {activeTab === 'hospitals' && trip.nearHospitalsFromHotel?.length ? (
+                        <div className="mt-8">
+                            <h2 className="text-2xl font-semibold text-neutral-800 mb-3">Nearby Hospitals</h2>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                {trip.nearHospitalsFromHotel.map((place, index) => (
+                                    <div key={index} className="rounded-xl border gap-3">
+                                        <Image src={place.image} alt={place.name} className="rounded-t-xl object-cover" />
+                                        <div className='p-4'>
+                                            <h3 className="text-lg font-semibold">{place.name}</h3>
+                                            <p className="text-sm text-neutral-600">Distance: {place.distance} km</p>
+                                            <p className="text-sm text-neutral-600">Rating: {place.rating} stars</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ) : (
+                        activeTab === 'attractions' && <p className="mt-5 text-neutral-600">No nearby hospitals available.</p>
+                    )}
+
+                    {activeTab === 'localServices' && trip.localServices?.length ? (
+                        <div className="mt-8">
+                            <h2 className="text-2xl font-semibold text-neutral-800 mb-3">Local Services</h2>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                {trip.localServices.map((place, index) => (
+                                    <div key={index} className="rounded-xl border gap-3">
+                                        <Image src={place.image} alt={place.name} className="rounded-t-xl object-cover" />
+                                        <div className='p-4'>
+                                            <h3 className="text-lg font-semibold">{place.name}</h3>
+                                            <p className="text-sm text-neutral-600">Distance: {place.distance} km</p>
+                                            <p className="text-sm text-neutral-600">Rating: {place.rating} stars</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ) : (
+                        activeTab === 'localServices' && <p className="mt-5 text-neutral-600">No nearby local services available.</p>
+                    )}
                 </div>
 
                 <div className='md:w-5/12'>
                     {/* Weather Information */}
-                    <Weather 
-                        data={{
-                            name: trip.destination,
-                            main: { temp: 27 },
-                            weather: [{ description: "Cloudy" }],
-                            wind: { speed: 5 },
-                        }}
-                     />
+                    <Weather city="Kerala" />
+
 
                     {/* Map Embed */}
                     <div className="rounded-x mt-4">

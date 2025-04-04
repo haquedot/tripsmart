@@ -2,6 +2,7 @@
 'use client';
 
 import React from 'react';
+import { Button } from './ui/button';
 
 export default function Contact() {
     return (
@@ -14,7 +15,7 @@ export default function Contact() {
                 <input type="email" id="email" name="email" className="py-2 px-4 rounded-md bg-neutral-100 text-black" placeholder='Enter your email' />
                 <label htmlFor="message" className="text-black">Message</label>
                 <textarea id="message" name="message" className="py-2 px-4 rounded-md bg-neutral-100 text-black" rows={5} placeholder='Type your message...'></textarea>
-                <button type="submit" className="bg-primary-500 text-black py-2 rounded-md">Send</button>
+                <Button>Send</Button>
             </form>
         </div>
     );

@@ -8,31 +8,26 @@ export default function Features() {
                 <div className="text-center md:text-start mb-10">
                     <h2 className="text-sm md:text-md font-bold text-pink-500 mb-3 tracking-widest">KEY FEATURES</h2>
                     <h1 className="text-3xl md:text-5xl font-bold tracking-wide mb-6">Why use tripsmart?</h1>
-                    <p className="text-neutral-600 text-sm max-w-xl">
-                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
-                        from 45 BC.
-                    </p>
                 </div>
 
                 <div className="">
                     <div className="block">
                         <div className="flex flex-col space-y-1 mb-3 border border-indigo-100 p-5 rounded-3xl">
-                            <h3 className="text-xl font-bold text-neutral-800">Feature 1</h3>
+                            <h3 className="text-xl font-bold text-neutral-800">Trip Planning</h3>
                             <p className="text-neutral-500 text-md">
-                                Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                TripSmart allows users to plan trips based on their location, offering informations like transportation, accommodations, local services (like pharmacies and hospitals), and popular tourist attractions.
                             </p>
                         </div>
                         <div className="flex flex-col space-y-1 mb-3 border border-indigo-100 p-5 rounded-3xl">
-                            <h3 className="text-xl font-bold text-neutral-800">Feature 2</h3>
+                            <h3 className="text-xl font-bold text-neutral-800">Real Time Updates</h3>
                             <p className="text-neutral-500 text-md">
-                                Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                Integrated with APIs like Google Maps and OpenWeatherMap, TripSmart provides users with live updates on weather conditions ensuring a smooth and informed travel experience.
                             </p>
                         </div>
                         <div className="flex flex-col space-y-1 mb-3 border border-indigo-100 p-5 rounded-3xl">
-                            <h3 className="text-xl font-bold text-neutral-800">Feature 3</h3>
+                            <h3 className="text-xl font-bold text-neutral-800">Comprehensive Local Services</h3>
                             <p className="text-neutral-500 text-md">
-                                Contrary to popular belief, Lorem Ipsum is not simply random text.
-                            </p>
+                                TripSmart offers information of nearby services like restaurants, pharmacies, and hospitals, making it easier for travelers to find essential amenities and local attractions on their trips.                            </p>
                         </div>
                     </div>
 

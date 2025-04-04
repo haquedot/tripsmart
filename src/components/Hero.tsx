@@ -2,6 +2,8 @@ import Image from "next/image";
 import hero1 from "../../public/images/hero1.png"
 import { Button } from "./ui/button";
 import { FaShoppingBag } from "react-icons/fa";
+import { Dialog, DialogContent, DialogTrigger } from './ui/dialog';
+import CreateTripForm from './CreateTripForm';
 
 export default function Hero() {
     return (
@@ -20,9 +22,16 @@ export default function Hero() {
                                     with Ease.
                                 </h1>
                                 <p className="text-gray-500">
-                                    We always make our customer happy by providing curated information of trip.                                    
+                                    We always make our customer happy by providing curated information of trip.
                                 </p>
-                                <Button>Create New Trip</Button>
+                                <Dialog>
+                                    <DialogTrigger asChild>
+                                        <Button>Create New Trip</Button>
+                                    </DialogTrigger>
+                                    <DialogContent className="max-w-[625px]">
+                                        <CreateTripForm />
+                                    </DialogContent>
+                                </Dialog>
                             </div>
                         </div>
                         <div className="flex items-center justify-center order-first md:order-last">
