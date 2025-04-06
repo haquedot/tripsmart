@@ -27,42 +27,43 @@ import { FaStar } from "react-icons/fa";
 
 const destinations = [
     {
-        title: "Paradise Beach, Bantayan Island",
-        subtitle: "Paradise Beach, Bantayan Island",
+        title: "Radhanagar Beach, Havelock Island",
+        subtitle: "Andaman and Nicobar Islands",
         image: destination1,
         rating: 4.8,
     },
     {
-        title: "Metropolitan City of Rome Capital Italy",
-        subtitle: "Rome, Italy",
+        title: "Qutub Minar",
+        subtitle: "Delhi",
         image: Rome,
         rating: 4.5,
     },
     {
-        title: "The westernmost of the Lesser Sunda Islands",
-        subtitle: "Bali, Indonesia",
+        title: "Charminar",
+        subtitle: "Hyderabad, Telangana",
         image: Bali,
         rating: 4.7,
     },
     {
-        title: "The Eiffel Tower in Paris",
-        subtitle: "Paris, France",
+        title: "India Gate",
+        subtitle: "New Delhi",
         image: Paris,
         rating: 4.9,
     },
     {
-        title: "The island of Santorini",
-        subtitle: "Santorini, Greece",
+        title: "Dal Lake",
+        subtitle: "Srinagar, Jammu & Kashmir",
         image: Santorini,
         rating: 4.6,
     },
     {
-        title: "The classical Buddhist temples",
-        subtitle: "Kyoto, Japan",
+        title: "Mahabodhi Temple",
+        subtitle: "Bodh Gaya, Bihar",
         image: Kyoto,
         rating: 4.8,
     },
 ];
+
 
 interface PopularDestinationProps {
     height?: string;
