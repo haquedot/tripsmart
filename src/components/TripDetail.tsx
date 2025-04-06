@@ -181,7 +181,7 @@ export default function TripDetail() {
 
                 <div className='md:w-5/12'>
                     {/* Weather Information */}
-                    <Weather city="Kerala" />
+                    <Weather city={trip.title} />
 
 
                     {/* Map Embed */}

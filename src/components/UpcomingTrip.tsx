@@ -12,7 +12,7 @@ export default function UpcomingTrip() {
     return (
         <>
             <section className="mb-4">
-                {upcomingTrips.slice(0, 2).map((trip, idx) => (
+                {upcomingTrips.slice(0, 1).map((trip, idx) => (
                     <Link href={'/upcoming-trip'} key={idx} className="h-full flex border-2 border-pink-100 rounded-2xl mb-3">
                         <div className="flex">
                             <Image src={trip.image} alt="img1" className="rounded-l-xl max-w-36 max-h-24 md:max-w-96 md:max-h-64 object-cover" />
